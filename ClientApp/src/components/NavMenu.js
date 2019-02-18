@@ -1,30 +1,18 @@
 ﻿import React from 'react';
 import { Link } from 'react-router-dom';
-import { Glyphicon, Nav, Navbar, NavItem } from 'react-bootstrap';
-import { LinkContainer } from 'react-router-bootstrap';
-import './NavMenu.css';
 
-export default props => (
-  <Navbar inverse fixedTop fluid collapseOnSelect>
-    <Navbar.Header>
-      <Navbar.Brand>
-        <Link to={'/'}>aspnet_react_auth</Link>
-      </Navbar.Brand>
-      <Navbar.Toggle />
-    </Navbar.Header>
-    <Navbar.Collapse>
-      <Nav>
-        <LinkContainer to={'/'} exact>
-          <NavItem>
-            <Glyphicon glyph='home' /> Home
-          </NavItem>
-        </LinkContainer>
-        <LinkContainer to={'/login'}>
-          <NavItem>
-            <Glyphicon glyph='log-out' /> Logout
-          </NavItem>
-        </LinkContainer>
-      </Nav>
-    </Navbar.Collapse>
-  </Navbar>
-);
+class NavMenu extends React.Component {
+  render() {
+    return (
+      <div className="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+        <h5 className="my-0 mr-md-auto font-weight-normal"><Link to={'/'} exact>Home</Link></h5>
+        <nav className="my-2 my-md-0 mr-md-3">
+        </nav>
+        <Link className="btn btn-outline-primary" to={'/login'} exact>Logout</Link>
+      </div>
+    );
+  }
+
+}
+
+export { NavMenu };

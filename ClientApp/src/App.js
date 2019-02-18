@@ -5,16 +5,16 @@ import Home from './components/Home';
 import { Login } from './components/Login';
 import { PrivateRoute} from './components/PrivateRoute';
 import {Register} from './components/Register';
-import { withRouter } from 'react-router'
+import { withRouter } from 'react-router';
 
 
 class App extends React.Component {
   render() {
     const alert = this.props.alert;
     return (
-      <div className="container">
+      <div>
           {this.props.alert.message &&
-              <div className={`alert ${alert.type}`}>{alert.message}</div>
+              <div className={'alert ' + alert.type}>{alert.message}</div>
           }
         <Switch> 
           <PrivateRoute exact path='/' component={Home} />
